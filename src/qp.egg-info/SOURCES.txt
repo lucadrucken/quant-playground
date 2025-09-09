@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/qp/__init__.py
+src/qp/performance.py
+src/qp/pricing.py
+src/qp/risk.py
+src/qp.egg-info/PKG-INFO
+src/qp.egg-info/SOURCES.txt
+src/qp.egg-info/dependency_links.txt
+src/qp.egg-info/top_level.txt
+tests/test_risk_sharpe.py
