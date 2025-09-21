@@ -35,7 +35,7 @@ print(f"Annualized Sharpe = {sr:.2f}")
 
 ### Risk
 ```python
-from qp.risk import var_historical
+from qp import var_historical
 import numpy as np
 
 returns = np.array([0.004, -0.006, 0.001, -0.012, 0.003, 0.007, -0.004, 0.002])
