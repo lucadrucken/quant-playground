@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from qp.risk import sharpe
+from qp import sharpe
 
 
 def test_sharpe_zero_if_returns_equal_rf():

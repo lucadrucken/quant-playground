@@ -7,6 +7,12 @@ name = "qp"
 version = "0.0.2"
 description = "Quant playground"
 requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "yfinance", 
+    "matplotlib" 
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

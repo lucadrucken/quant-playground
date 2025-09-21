@@ -1,11 +1,14 @@
 README.md
 pyproject.toml
 src/qp/__init__.py
+src/qp/bonds.py
 src/qp/performance.py
-src/qp/pricing.py
 src/qp/risk.py
 src/qp.egg-info/PKG-INFO
 src/qp.egg-info/SOURCES.txt
 src/qp.egg-info/dependency_links.txt
+src/qp.egg-info/requires.txt
 src/qp.egg-info/top_level.txt
+tests/test_bonds.py
 tests/test_risk_sharpe.py
+tests/test_risk_var.py

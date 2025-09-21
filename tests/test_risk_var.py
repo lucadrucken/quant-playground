@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from qp.risk import var_historical
+from qp import var_historical
 
 
 def test_var_historical_zero_for_zero_returns():

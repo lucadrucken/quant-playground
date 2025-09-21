@@ -3,3 +3,7 @@ Name: qp
 Version: 0.0.2
 Summary: Quant playground
 Requires-Python: >=3.10
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: statsmodels
