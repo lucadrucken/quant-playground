@@ -1,5 +1,5 @@
 import math
-from qp.options import bs_price, binomial_price
+from qp import bs_price, binomial_price
 from math import exp
 
 def test_put_call_parity_with_dividends():
