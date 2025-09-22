@@ -10,7 +10,7 @@ def bond_price(
         freq: int = 1, 
 ) -> float: 
     """"
-    reis eines Plain-Vanilla-Bonds mit 'freq' Zahlungen/Jahr.
+    Preis eines Plain-Vanilla-Bonds mit 'freq' Zahlungen/Jahr.
     Es wird n = round(maturity*freq) verwendet (kein Accrued/Dirty-Clean).
     """
     if face_value <= 0: 

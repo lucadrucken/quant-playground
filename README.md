@@ -1,8 +1,8 @@
 ﻿# Quant-Notebooks & Tools
-*Luca Druckenmueller*
+
+_Luca Druckenmueller_
 
 This project contains implementations of classical financial models I learned during my studies.
-
 
 ---
 
@@ -11,7 +11,7 @@ This project contains implementations of classical financial models I learned du
 ```bash
 git clone https://github.com/lucadrucken/quant-playground.git
 cd quant-playground
-pip install -r requirements.txt   
+pip install -r requirements.txt
 # installs qp as well because of '-e .' → all models available via top-level imports
 ```
 
@@ -20,6 +20,7 @@ pip install -r requirements.txt
 ## Quickstart
 
 ### Performance
+
 ```python
 from qp import sharpe
 import numpy as np
@@ -34,6 +35,7 @@ print(f"Annualized Sharpe = {sr:.2f}")
 ```
 
 ### Risk
+
 ```python
 from qp import var_historical
 import numpy as np
@@ -45,15 +47,17 @@ print(f"VaR(99%) per period = {var99:.4f}")
 ```
 
 ### Bond Pricing
+
 ```python
 from qp import bond_price
 
-price = bond_price(face_value=1000, maturity_years=5,
+price = bond_price(face_value=1000, maturity=5,
                    coupon_rate=0.05, ytm=0.04, freq=2)
 print(price)  # -> ~1035.74
 ```
 
 ### Black–Scholes (European Options)
+
 ```python
 from qp import bs_price
 
@@ -63,6 +67,7 @@ print(call, put)
 ```
 
 ### Binomial Model (European & American)
+
 ```python
 from qp import binomial_price
 
@@ -94,7 +99,7 @@ QUANT-PLAYGROUND/
 │   └── 01_risk_demo.ipynb      # risk metrics demo
 │
 ├── src/qp/            # main package (all models)
-│   ├── __init__.py 
+│   ├── __init__.py
 │   ├── bonds.py       # bond pricing models
 │   ├── options.py     # option pricing models (Black–Scholes, Binomial)
 │   ├── performance.py # performance metrics
@@ -108,6 +113,6 @@ QUANT-PLAYGROUND/
 │
 ├── requirements.txt   # dependencies
 ├── pyproject.toml     # build configuration
-├── README.md 
-└── .gitignore  
+├── README.md
+└── .gitignore
 ```
