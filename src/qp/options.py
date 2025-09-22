@@ -19,7 +19,7 @@ def bs_price(
     K: float,   #Strike 
     r: float,   #risk-free 
     q: float,   #dividend-yield
-    sigma: float,   #Volatility 
+    sigma: float,  #Volatility 
     T: float,   #Maturity in years
     option_type: Literal["call", "put"] = "call",
 ) -> float:
