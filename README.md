@@ -3,7 +3,7 @@
 _Luca Druckenmueller_
 
 This project contains implementations of classical financial models I learned during my studies.
-
+It is a **work in progress** and will be continuously extended with further tools and applications.
 ---
 
 ## Installation
@@ -94,25 +94,26 @@ pytest -q
 
 ```
 QUANT-PLAYGROUND/
-├── notebooks/         # Jupyter notebooks (experiments, demos)
-│   ├── 00_notebook.ipynb       # general playground
-│   └── 01_risk_demo.ipynb      # risk metrics demo
+├── notebooks/ # Jupyter notebooks (experiments, demos)
+│ ├── 00_notebook.ipynb # general playground
+│ ├── 01_risk_demo.ipynb # risk metrics demo
+│ └── 02_vol_scenarios.ipynb # vol scenarios (pricing & greeks)
 │
-├── src/qp/            # main package (all models)
-│   ├── __init__.py
-│   ├── bonds.py       # bond pricing models
-│   ├── options.py     # option pricing models (Black–Scholes, Binomial)
-│   ├── performance.py # performance metrics
-│   └── risk.py        # risk measures
+├── src/qp/ # main package (all models)
+│ ├── init.py
+│ ├── bonds.py # bond pricing models
+│ ├── options.py # option pricing models (Black–Scholes, Binomial)
+│ ├── performance.py # performance metrics
+│ └── risk.py # risk measures
 │
-├── tests/             # pytest unit tests
-│   ├── test_bonds.py
-│   ├── test_options.py
-│   ├── test_risk_sharpe.py
-│   └── test_risk_var.py
+├── tests/ # pytest unit tests
+│ ├── test_bonds.py
+│ ├── test_options.py
+│ ├── test_risk_sharpe.py
+│ └── test_risk_var.py
 │
-├── requirements.txt   # dependencies
-├── pyproject.toml     # build configuration
+├── requirements.txt # dependencies
+├── pyproject.toml # build configuration
 ├── README.md
 └── .gitignore
 ```
