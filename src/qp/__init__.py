@@ -1,5 +1,6 @@
 ﻿from .risk import (
     var_historical,
+    es_historical
 )
 
 from .performance import (
@@ -23,6 +24,7 @@ from .options import (
 __all__ = [
     "sharpe",
     "var_historical",
+    "es_historical",
     "bond_price",
     "bs_price",
     "bs_greeks",

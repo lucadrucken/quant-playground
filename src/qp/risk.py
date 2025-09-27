@@ -56,6 +56,51 @@ def var_historical(
     return float(v)
 
 
+def es_historical(
+    returns: ArrayLike,
+    level: float = 0.99,
+    input_is_loss: bool = False,
+    method: str = "linear",
+) -> float:
+    """
+    Historical Expected Shortfall (Conditional VaR) for 1 period.
 
+    Parameters
+    ----------
+    returns : Iterable[float] | np.ndarray
+        Period returns or losses (see `input_is_loss`).
+    level : float, default 0.99
+        Confidence level (e.g. 0.95 or 0.99).
+    input_is_loss : bool, default False
+        False: `returns` are treated as returns and negated to losses.
+        True: `returns` are treated as losses (no negation).
+    method : str, default "linear"
+        Quantile method for `numpy.quantile`.
+
+    Returns
+    -------
+    float
+        Expected Shortfall (positive loss).
+    """
+    x = np.asarray(list(returns), dtype=float)
+    x = x[~np.isnan(x)]
+    if x.size == 0:
+        return float("nan")
+
+    losses = x if input_is_loss else -x
+    q = float(np.clip(level, 0.0, 1.0))
+
+    # calculate VaR at the level
+    try:
+        var = np.quantile(losses, q, method=method)
+    except TypeError:
+        var = np.quantile(losses, q, interpolation=method)
+
+    # select tail losses beyond VaR
+    tail_losses = losses[losses >= var]
+    if tail_losses.size == 0:
+        return float(var)
+
+    return float(np.mean(tail_losses))
 
 
