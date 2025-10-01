@@ -90,30 +90,56 @@ pytest -q
 
 ---
 
+## Available Functions
+
+### Risk
+- `var_historical(returns, level)` – Historical Value-at-Risk
+- `es_historical(returns, level)` – Historical Expected Shortfall
+
+### Performance
+- `sharpe(returns, risk_free, periods_per_year)` – Annualized Sharpe Ratio
+
+### Fixed Income
+- `bond_price(face_value, maturity, coupon_rate, ytm, freq)` – Price of a fixed coupon bond
+- `macaulay_duration(cashflows, ytm, freq)` – Weighted average time to receive cashflows
+- `modified_duration(cashflows, ytm, freq)` – Interest rate sensitivity (Macaulay adjusted by yield)
+- `dollar_duration(cashflows, ytm, freq, face_value)` – Price change per 1 bp change in yield
+- `convexity(cashflows, ytm, freq)` – Curvature of price–yield relationship (second-order sensitivity)
+
+### Derivatives
+- `bs_price(S, K, r, q, sigma, T, option_type)` – Black–Scholes price
+- `bs_greeks(...)` – Black–Scholes Greeks
+- `binomial_price(...)` – Binomial pricing (European/American)
+- `call_from_put(...)`, `put_from_call(...)` – Put–Call parity helpers
+- `parity_gap(...)`, `parity_bounds(...)` – Put–Call parity diagnostics
+
+
+
 ## Project Structure
 
 ```
 QUANT-PLAYGROUND/
-├── notebooks/ # Jupyter notebooks (experiments, demos)
-│ ├── 00_notebook.ipynb # general playground
-│ ├── 01_risk_demo.ipynb # risk metrics demo
-│ └── 02_vol_scenarios.ipynb # vol scenarios (pricing & greeks)
+├── notebooks/                   
+│   ├── 00_notebook.ipynb        # general playground
+│   ├── 01_risk_demo.ipynb       # risk metrics demo
+│   └── 02_vol_scenarios.ipynb   # vol scenarios (pricing & greeks)
 │
-├── src/qp/ # main package (all models)
-│ ├── init.py
-│ ├── bonds.py # bond pricing models
-│ ├── options.py # option pricing models (Black–Scholes, Binomial)
-│ ├── performance.py # performance metrics
-│ └── risk.py # risk measures
+├── src/qp/                      # main package (all models)
+│   ├── __init__.py
+│   ├── derivatives.py           
+│   ├── fixed_income.py          
+│   ├── performance.py           
+│   ├── portfolio.py             
+│   └── risk.py                  
 │
-├── tests/ # pytest unit tests
-│ ├── test_bonds.py
-│ ├── test_options.py
-│ ├── test_risk_sharpe.py
-│ └── test_risk_var.py
+├── tests/                       # pytest unit tests
+│   ├── test_derivatives.py
+│   ├── test_fixed_income.py
+│   ├── test_performance.py
+│   └── test_risk.py
 │
-├── requirements.txt # dependencies
-├── pyproject.toml # build configuration
+├── requirements.txt             # dependencies
+├── pyproject.toml               
 ├── README.md
 └── .gitignore
 ```
