@@ -101,10 +101,10 @@ pytest -q
 
 ### Fixed Income
 - `bond_price(face_value, maturity, coupon_rate, ytm, freq)` – Price of a fixed coupon bond
-- `macaulay_duration(cashflows, ytm, freq)` – Weighted average time to receive cashflows
-- `modified_duration(cashflows, ytm, freq)` – Interest rate sensitivity (Macaulay adjusted by yield)
-- `dollar_duration(cashflows, ytm, freq, face_value)` – Price change per 1 bp change in yield
-- `convexity(cashflows, ytm, freq)` – Curvature of price–yield relationship (second-order sensitivity)
+- `macaulay_duration(...)` – Weighted average time to receive cashflows
+- `modified_duration(...)` – Interest rate sensitivity (Macaulay adjusted by yield)
+- `dollar_duration(...)` – Price change per 1 bp change in yield
+- `convexity(...)` – Curvature of price–yield relationship (second-order sensitivity)
 
 ### Derivatives
 - `bs_price(S, K, r, q, sigma, T, option_type)` – Black–Scholes price

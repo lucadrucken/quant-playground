@@ -12,31 +12,32 @@ def sharpe(
     ddof: int = 1,
 ) -> float:
     """
-    Annualisierte Sharpe Ratio.
+    Annualized Sharpe ratio.
 
     Parameters
     ----------
-    returns : Iterable[float] oder np.ndarray
-        Periodische einfache Renditen (z. B. täglich).
-    risk_free : float oder ArrayLike, optional (default=0.0)
-        Entweder ein konstanter risikofreier Satz pro Periode
-        oder eine zeitvariable Serie gleicher Länge wie returns.
-    periods_per_year : int, optional (default=252)
-        Annualisierungsfaktor (252 für tägliche Daten, 12 für monatliche).
-    ddof : int, optional (default=1)
-        Freiheitsgrade für die Standardabweichung (Sample-Std).
+    returns : array-like of float
+        Period returns (e.g., daily simple returns).
+    risk_free : float or array-like, default 0.0
+        Risk-free rate per period. Either a constant or a time series
+        of the same length as `returns`. If you have an annualized rate,
+        convert to per-period before calling.
+    periods_per_year : int, default 252
+        Annualization factor (252 for daily, 12 for monthly, etc.).
+    ddof : int, default 1
+        Delta degrees of freedom for standard deviation (sample = 1, population = 0).
 
     Returns
     -------
     float
-        Annualisierte Sharpe Ratio. Gibt 0.0 zurück, wenn die
-        Standardabweichung 0 oder nicht definiert ist.
+        Annualized Sharpe ratio. Returns 0.0 if the standard deviation
+        is zero or undefined.
 
     Notes
     -----
-    - Der risikofreie Satz muss per Periode angegeben werden.
-      Falls du einen annualisierten rf hast, vorher konvertieren.
-    - Annualisierung erfolgt mit sqrt(periods_per_year).
+    - Risk-free rate must be specified per period.
+    - Annualization is performed by multiplying the mean excess return by
+    `periods_per_year` and scaling volatility by `sqrt(periods_per_year)`.
     """
     r = np.asarray(returns, dtype=float)
     r = r[~np.isnan(r)]
@@ -46,7 +47,7 @@ def sharpe(
     else:
         rf = np.asarray(risk_free, dtype=float)
         if rf.shape != r.shape:
-            raise ValueError("risk_free muss skalar sein oder gleiche Form wie returns")
+            raise ValueError("risk_free must be scalar or have the same shape as returns")
         excess = r - rf
 
     mean = np.nanmean(excess)
