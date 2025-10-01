@@ -85,6 +85,7 @@ print(eu_put, am_put)  # American Put >= European Put
 All models are covered by unit tests using Pytest:
 
 ```bash
+pip install pytest
 pytest -q
 ```
 
@@ -108,8 +109,8 @@ pytest -q
 
 ### Derivatives
 - `bs_price(S, K, r, q, sigma, T, option_type)` – Black–Scholes price
-- `bs_greeks(...)` – Black–Scholes Greeks
 - `binomial_price(...)` – Binomial pricing (European/American)
+- `bs_greeks(...)` – Black–Scholes Greeks
 - `call_from_put(...)`, `put_from_call(...)` – Put–Call parity helpers
 - `parity_gap(...)`, `parity_bounds(...)` – Put–Call parity diagnostics
 
