@@ -2,7 +2,11 @@ README.md
 pyproject.toml
 src/qp/__init__.py
 src/qp/bonds.py
+src/qp/derivatives.py
+src/qp/fixed_income.py
+src/qp/options.py
 src/qp/performance.py
+src/qp/portfolio.py
 src/qp/risk.py
 src/qp.egg-info/PKG-INFO
 src/qp.egg-info/SOURCES.txt
@@ -10,5 +14,10 @@ src/qp.egg-info/dependency_links.txt
 src/qp.egg-info/requires.txt
 src/qp.egg-info/top_level.txt
 tests/test_bonds.py
+tests/test_derivatives.py
+tests/test_fixed_income.py
+tests/test_options.py
+tests/test_performance.py
+tests/test_risk.py
 tests/test_risk_sharpe.py
 tests/test_risk_var.py

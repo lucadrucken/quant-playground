@@ -5,5 +5,5 @@ Summary: Quant playground
 Requires-Python: >=3.10
 Requires-Dist: numpy
 Requires-Dist: pandas
-Requires-Dist: scipy
-Requires-Dist: statsmodels
+Requires-Dist: yfinance
+Requires-Dist: matplotlib
