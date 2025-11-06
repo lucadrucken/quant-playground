@@ -123,8 +123,9 @@ QUANT-PLAYGROUND/
 ├── notebooks/                   
 │   ├── 00_notebook.ipynb        # general playground
 │   ├── 01_risk_demo.ipynb       # risk metrics demo
-│   └── 02_vol_scenarios.ipynb   # vol scenarios (pricing & greeks)
-│
+│   ├── 02_vol_scenarios.ipynb   # vol scenarios (pricing & greeks)
+│   └── 03_delta_hedging.ipynb   # delta hedging of sold european call
+│  
 ├── src/qp/                      # main package (all models)
 │   ├── __init__.py
 │   ├── derivatives.py           
